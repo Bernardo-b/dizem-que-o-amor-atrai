@@ -1,0 +1,93 @@
+.opening-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(to bottom, var(--color-paper) 0%, var(--color-beige) 100%);
+}
+
+.opening-content {
+  text-align: center;
+  max-width: 600px;
+  position: relative;
+  padding: 3rem 2rem;
+}
+
+.opening-content h1 {
+  font-size: 3.5rem;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.opening-content p {
+  font-size: 1.3rem;
+  color: var(--color-text-light);
+  margin-bottom: 3rem;
+  font-family: 'Lora', serif;
+  line-height: 1.8;
+}
+
+.opening-content button {
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+  background-color: var(--color-pink);
+  border: 2px solid var(--color-accent);
+  color: var(--color-text);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: 'Lora', serif;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.opening-content button:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 165, 165, 0.3);
+}
+
+/* Decoração de lírios */
+.lily-decoration {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.6;
+  filter: grayscale(20%);
+}
+
+.lily-decoration.top {
+  top: 0;
+  right: 10%;
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.lily-decoration.bottom {
+  bottom: 0;
+  left: 10%;
+  animation: floatGentle 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .opening-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .opening-content p {
+    font-size: 1.1rem;
+  }
+
+  .opening-content button {
+    font-size: 1rem;
+    padding: 0.875rem 2.5rem;
+  }
+
+  .lily-decoration {
+    font-size: 2rem;
+  }
+}

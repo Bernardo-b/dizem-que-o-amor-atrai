@@ -1,0 +1,55 @@
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-container > div {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Scroll container para a intro */
+.scroll-container {
+  overflow-y: auto;
+  height: 100vh;
+}
+
+/* Background degradê contínuo para a página de content */
+.scroll-container[data-page="content"] {
+  background: linear-gradient(
+    to bottom,
+    var(--color-paper) 0%,
+    var(--color-beige) 33%,
+    var(--color-beige) 50%,
+    var(--color-green) 75%,
+    var(--color-beige) 100%
+  );
+}
+
+.scroll-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Smooth transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset any scroll snap */
+body {
+  overflow-x: hidden;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .scroll-section {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,108 @@
+.ending-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--color-pink) 0%, var(--color-beige) 50%, var(--color-green) 100%);
+  overflow-y: auto;
+}
+
+.ending-content {
+  text-align: center;
+  max-width: 700px;
+}
+
+.hearts-decoration {
+  font-size: 5rem;
+  color: var(--color-accent);
+  margin-bottom: 2rem;
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+.ending-content h1 {
+  font-size: 4rem;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.main-message {
+  font-size: 1.4rem;
+  color: var(--color-text);
+  line-height: 2;
+  margin-bottom: 2.5rem;
+  font-family: 'Lora', serif;
+}
+
+.flower-decoration {
+  font-size: 2.5rem;
+  margin: 2rem 0;
+  opacity: 0.8;
+}
+
+.final-note {
+  font-size: 1.2rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin-bottom: 3rem;
+  font-family: 'Lora', serif;
+}
+
+.ending-buttons {
+  margin-top: 3rem;
+}
+
+.ending-buttons button {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  background-color: white;
+  border: 2px solid var(--color-accent);
+  color: var(--color-text);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Lora', serif;
+}
+
+.ending-buttons button:hover {
+  background-color: var(--color-accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(212, 165, 165, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hearts-decoration {
+    font-size: 3.5rem;
+  }
+
+  .ending-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-message {
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .flower-decoration {
+    font-size: 2rem;
+  }
+
+  .final-note {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ending-content h1 {
+    font-size: 2rem;
+  }
+
+  .main-message {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,44 @@
+/* Estilos para navegação via scroll */
+
+.scroll-container {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.scroll-section {
+  width: 100%;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animação ao entrar na seção */
+@keyframes sectionEnter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-section > div {
+  animation: sectionEnter 0.8s ease-out forwards;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .scroll-section {
+    min-height: auto;
+  }
+}

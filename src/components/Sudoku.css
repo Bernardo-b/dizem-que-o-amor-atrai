@@ -1,0 +1,268 @@
+.sudoku-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: transparent;
+}
+
+.sudoku-content {
+  max-width: 650px;
+  width: 100%;
+}
+
+.sudoku-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.sudoku-header h2 {
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.sudoku-header p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  font-style: italic;
+  margin: 0;
+}
+
+.sudoku-board {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+  display: inline-block;
+  width: 100%;
+  max-width: 486px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.sudoku-row {
+  display: flex;
+}
+
+.sudoku-cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+  color: var(--color-text);
+}
+
+.sudoku-cell.fixed {
+  background-color: var(--color-beige);
+  font-weight: 600;
+  cursor: default;
+  color: var(--color-text);
+}
+
+.sudoku-cell.selected {
+  background-color: var(--color-pink);
+  border: 2px solid var(--color-accent);
+}
+
+.sudoku-cell.error {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.sudoku-cell:not(.fixed):hover {
+  background-color: rgba(232, 207, 209, 0.3);
+}
+
+/* Bordas mais grossas para os blocos 3x3 */
+.sudoku-cell:nth-child(3n) {
+  border-right: 2px solid #999;
+}
+
+.sudoku-row:nth-child(3n) .sudoku-cell {
+  border-bottom: 2px solid #999;
+}
+
+.sudoku-controls {
+  text-align: center;
+}
+
+.number-pad {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.number-pad button {
+  padding: 1rem;
+  font-size: 1.2rem;
+  background-color: white;
+  border: 2px solid var(--color-accent);
+  color: var(--color-text);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Playfair Display', serif;
+}
+
+.number-pad button:hover:not(:disabled) {
+  background-color: var(--color-pink);
+  transform: translateY(-2px);
+}
+
+.number-pad button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.sudoku-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.clear-btn,
+.skip-btn {
+  padding: 0.875rem 2.5rem;
+  font-size: 1rem;
+  background-color: white;
+  border: 2px solid var(--color-text-light);
+  color: var(--color-text);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Lora', serif;
+}
+
+.skip-btn {
+  border-color: var(--color-accent);
+  background-color: var(--color-pink);
+}
+
+.clear-btn:hover:not(:disabled),
+.skip-btn:hover {
+  background-color: var(--color-beige);
+  transform: translateY(-2px);
+}
+
+.skip-btn:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.clear-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Mensagem de conclusão */
+.completion-message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.completion-content {
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+}
+
+.completion-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.completion-content h3 {
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.completion-content p {
+  font-size: 1.1rem;
+  color: var(--color-text-light);
+  margin-bottom: 2rem;
+}
+
+.completion-content button {
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  background-color: var(--color-pink);
+  border: 2px solid var(--color-accent);
+  color: var(--color-text);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Lora', serif;
+}
+
+.completion-content button:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .sudoku-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .sudoku-board {
+    padding: 0.5rem;
+  }
+
+  .sudoku-cell {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .number-pad {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .number-pad button {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sudoku-cell {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .number-pad {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
