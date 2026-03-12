@@ -1,4 +1,4 @@
-# Surpanila 💝
+# niver lala 💝
 
 Site de aniversário interativo e emocional para a Lalá.
 
@@ -68,14 +68,14 @@ Os arquivos otimizados estarão na pasta `dist/`
 
 ### Configuração do Repositório
 
-1. Crie um repositório no GitHub chamado `surpanila`
+1. Crie um repositório no GitHub chamado `niver-lala`
 2. Inicialize o Git local:
    ```bash
    git init
    git add .
    git commit -m "Initial commit"
    git branch -M main
-   git remote add origin https://github.com/SEU_USUARIO/surpanila.git
+   git remote add origin https://github.com/SEU_USUARIO/niver-lala.git
    git push -u origin main
    ```
 
@@ -87,13 +87,13 @@ Os arquivos otimizados estarão na pasta `dist/`
 
 Após o deploy, o site estará disponível em:
 ```
-https://SEU_USUARIO.github.io/surpanila/
+https://SEU_USUARIO.github.io/niver-lala/
 ```
 
 ## 📁 Estrutura do Projeto
 
 ```
-surpanila/
+niver-lala/
 ├── public/
 │   └── assets/
 │       ├── images/      # Suas fotos aqui
