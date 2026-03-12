@@ -12,8 +12,9 @@ function MusicPlayer({ isPlaying }) {
     // e atualize o src abaixo (ex: '/assets/music/sua-musica.mp3')
 
     if (isPlaying && !soundRef.current) {
+      const basePath = import.meta.env.BASE_URL
       soundRef.current = new Howl({
-        src: ['/assets/music/background.mp3'],
+        src: [`${basePath}assets/music/background.mp3`],
         loop: true,
         volume: 0.5,
         onloaderror: function(id, error) {
